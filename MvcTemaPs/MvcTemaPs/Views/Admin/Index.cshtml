@@ -1,0 +1,57 @@
+﻿@model IEnumerable<MvcTemaPs.Models.Spectacol>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SpectacolId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.distributia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.regia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.datapremierei)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numarBilete)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SpectacolId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.distributia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.regia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.datapremierei)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numarBilete)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SpectacolId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SpectacolId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SpectacolId })
+        </td>
+    </tr>
+}
+
+</table>

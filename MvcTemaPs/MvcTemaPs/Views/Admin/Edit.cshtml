@@ -1,0 +1,66 @@
+﻿@model MvcTemaPs.Models.Spectacol
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Spectacol</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.SpectacolId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.distributia, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.distributia)
+                @Html.ValidationMessageFor(model => model.distributia)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.regia, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.regia)
+                @Html.ValidationMessageFor(model => model.regia)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.datapremierei, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.datapremierei)
+                @Html.ValidationMessageFor(model => model.datapremierei)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.numarBilete, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.numarBilete)
+                @Html.ValidationMessageFor(model => model.numarBilete)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

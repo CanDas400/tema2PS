@@ -1,0 +1,50 @@
+﻿@model MvcTemaPs.Models.Spectacol
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Spectacol</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.distributia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.distributia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.regia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.regia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.datapremierei)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.datapremierei)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.numarBilete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.numarBilete)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.SpectacolId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
